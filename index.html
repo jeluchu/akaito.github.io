@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FEF6E7">
+  <meta name="description" content="Akaito conecta a personas adultas que comparten su pasión por el anime, el manga y los videojuegos. Descubre afinidades, chats misteriosos, comunidades y planes.">
+  <meta property="og:title" content="Akaito — Tu fandom puede ser el comienzo de algo">
+  <meta property="og:description" content="Conoce gente que comparte tus universos favoritos. Descubre afinidades, chats misteriosos, partidas y comunidades.">
+  <meta property="og:site_name" content="Akaito">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://akaito.jeluchu.com/">
+  <meta property="og:image" content="https://akaito.jeluchu.com/images/akaito-social-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Akaito: comparte anime, manga y videojuegos">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://akaito.jeluchu.com/">
+  <title>Akaito — Tu fandom puede ser el comienzo de algo</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="512x512">
+  <style>
+    @font-face {
+      font-family: "Gogia";
+      src: url("branding/fonts/Gogia.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+    :root {
+      color-scheme: light;
+      --red: #E52521;
+      --red-dark: #371011;
+      --wine: #371011;
+      --pink: #F7BBBD;
+      --cream: #FEF6E7;
+      --cream-light: #FEF6E7;
+      --paper: #FEF6E7;
+      --charcoal: #371011;
+      --deep: #371011;
+      --muted: rgba(55,16,17,.68);
+      --accent-cool: #E52521;
+      --accent-warm: #F7BBBD;
+      --line: rgba(55,16,17,.15);
+      --display: "Gogia", system-ui, sans-serif;
+      --body: "Gogia", system-ui, sans-serif;
+      --width: 1200px;
+    }
+    *,*::before,*::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; background: var(--paper); color: var(--charcoal); font-family: var(--body); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    body.menu-open { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button { font: inherit; }
+    .container { width: calc(100% - 48px); max-width: 1120px; max-width: var(--width); margin-left: auto; margin-right: auto; margin-inline: auto; }
+    .section { padding: 112px 0; }
+    h1,h2,h3,p { margin-top: 0; }
+    h1,h2,h3 { font-family: var(--display); }
+    h1,h2 { letter-spacing: -.025em; }
+    h1 { max-width: 690px; margin: 24px 0 22px; font-size: clamp(3.4rem,6.7vw,6.35rem); font-weight: 850; line-height: .98; }
+    h1 em { color: var(--red); font-style: normal; }
+    h2 { margin: 18px 0; font-size: clamp(2.5rem,4.4vw,4.45rem); font-weight: 820; line-height: 1.02; }
+    h3 { margin-bottom: 12px; font-size: 1.45rem; font-weight: 800; letter-spacing: -.015em; line-height: 1.12; }
+    .eyebrow { display: inline-flex; align-items: center; color: var(--red-dark); font-size: .74rem; font-weight: 800; letter-spacing: .12em; line-height: 1.3; text-transform: uppercase; }
+    .lead { max-width: 570px; color: var(--muted); font-size: clamp(1rem,1.35vw,1.18rem); line-height: 1.75; }
+    .section-intro { max-width: 640px; margin-bottom: 48px; }
+    .section-intro p { color: var(--muted); font-size: 1.04rem; line-height: 1.75; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .skip-link { position: fixed; z-index: 100; top: 12px; left: 12px; padding: 12px 16px; transform: translateY(-150%); border-radius: 999px; background: var(--charcoal); color: white; font-weight: 700; }
+    .skip-link:focus { transform: translateY(0); }
+    :focus-visible { outline: 3px solid var(--accent-cool); outline-offset: 4px; }
+
+    /* Header */
+    .site-header { position: sticky; z-index: 20; top: 0; border-bottom: 1px solid rgba(55,16,17,.08); background: rgba(254,246,231,.9); backdrop-filter: blur(18px); }
+    .header-inner { display: flex; min-height: 82px; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand img { width: 132px; height: auto; border-radius: 0; }
+    .site-nav { display: flex; align-items: center; }
+    .site-nav > a + a { margin-left: 20px; margin-left: clamp(18px,3vw,38px); }
+    .site-nav a { color: var(--wine); font-size: .89rem; font-weight: 680; text-decoration: none; transition: color .2s ease; }
+    .site-nav a:hover { color: var(--red-dark); }
+    .site-nav .nav-cta { padding: 12px 18px; border-radius: 999px; background: var(--charcoal); color: white; }
+    .site-nav .nav-cta:hover { background: var(--red-dark); color: white; }
+    .menu-toggle { display: none; width: 46px; height: 46px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--paper); color: var(--charcoal); cursor: pointer; transition: background-color .22s ease,border-color .22s ease,transform .22s ease; }
+    .menu-toggle:hover { transform: scale(1.04); }
+    .menu-toggle svg { width: 24px; height: 24px; overflow: visible; }
+    .menu-toggle .menu-line,.menu-toggle .menu-close { transform-box: view-box; transform-origin: 50% 50%; transition: transform .22s cubic-bezier(.2,.7,.2,1),opacity .16s ease; }
+    .menu-toggle .menu-close { opacity: 0; transform: rotate(-45deg) scale(.7); }
+    .menu-toggle[aria-expanded="true"] { border-color: rgba(229,37,33,.34); background: var(--pink); }
+    .menu-toggle[aria-expanded="true"] .menu-line { opacity: 0; transform: scale(.7); }
+    .menu-toggle[aria-expanded="true"] .menu-close { opacity: 1; transform: rotate(0) scale(1); }
+    .menu-toggle:focus-visible { outline: 2px solid var(--red-dark); outline-offset: 3px; }
+
+    /* Hero */
+    .hero { position: relative; overflow: hidden; padding: 76px 0 82px; background: radial-gradient(ellipse at 84% 36%,rgba(247,187,189,.82),transparent 34%),var(--cream-light); }
+    .hero::before { position: absolute; top: -210px; right: -120px; width: 610px; height: 610px; border: 1px solid rgba(229,37,33,.16); border-radius: 50%; content: ""; box-shadow: 0 0 0 36px rgba(229,37,33,.035),0 0 0 72px rgba(229,37,33,.025); }
+    .hero-grid { position: relative; z-index: 1; display: grid; min-height: 565px; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 48px; }
+    .hero-copy { padding: 20px 0 42px; }
+    .hero-copy h1 span { display: block; }
+    .hero-copy .lead { margin-bottom: 28px; }
+    .button { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; gap: 11px; padding: 0 21px; border: 1px solid transparent; border-radius: 999px; font-size: .91rem; font-weight: 760; text-decoration: none; transition: transform .22s ease,box-shadow .22s ease,background .22s ease,color .22s ease; }
+    .button:hover { transform: translateY(-3px); }
+    .button svg { width: 17px; height: 17px; }
+    .button-dark { background: var(--charcoal); color: var(--cream-light); }
+    .button-dark:hover { background: var(--deep); }
+    .scroll-cue { position: relative; z-index: 2; display: flex; width: max-content; align-items: center; flex-direction: column; gap: 10px; margin: 22px auto 0; color: var(--muted); font-size: .71rem; font-weight: 720; letter-spacing: .13em; line-height: 1.4; text-align: center; text-decoration: none; text-transform: uppercase; transition: color .2s ease; }
+    .scroll-cue:hover { color: var(--red-dark); }
+    .scroll-cue-icon { position: relative; display: block; width: 21px; height: 35px; border: 1.7px solid currentColor; border-radius: 999px; }
+    .scroll-cue-icon::before { position: absolute; top: 6px; left: 50%; width: 3px; height: 6px; border-radius: 999px; background: currentColor; content: ""; transform: translateX(-50%); animation: scroll-cue-wheel 1.5s cubic-bezier(.5,0,.5,1) infinite; }
+    @keyframes scroll-cue-wheel { 0% { opacity: 1; transform: translate(-50%,0); } 70% { opacity: 0; transform: translate(-50%,9px); } 100% { opacity: 0; transform: translate(-50%,0); } }
+    .adult-note { display: flex; align-items: center; gap: 8px; margin-top: 23px; color: var(--muted); font-size: .78rem; font-weight: 620; }
+    .adult-note svg { width: 17px; height: 17px; color: var(--red); }
+    .store-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .store-button { display: inline-flex; flex: 1 1 160px; min-width: 0; min-height: 68px; align-items: center; justify-content: flex-start; gap: 11px; padding: 10px 14px; border: 1px solid rgba(247,187,189,.45); border-radius: 16px; background: var(--wine); color: var(--cream-light); text-align: left; }
+    .store-button:disabled { cursor: default; opacity: 1; }
+    .store-button svg { width: 25px; height: 25px; flex: 0 0 auto; }
+    .store-button-copy small { display: block; margin-bottom: 3px; color: rgba(254,246,231,.76); font-size: .59rem; line-height: 1.2; }
+    .store-button-copy strong { display: block; font-family: var(--display); font-size: 1rem; line-height: 1.15; }
+    .hero-art { position: relative; width: min(100%,540px); min-height: 565px; justify-self: end; perspective: 1100px; }
+    .art-orbit { position: absolute; inset: 7% 4% 6% 5%; border: 1px dashed rgba(229,37,33,.3); border-radius: 48% 52% 43% 57% / 50% 44% 56% 50%; transform: rotate(-12deg); }
+    .art-orbit::before,.art-orbit::after { position: absolute; width: 11px; height: 11px; border-radius: 50%; background: var(--accent-warm); content: ""; }
+    .art-orbit::before { top: 8%; left: 27%; }
+    .art-orbit::after { right: 3%; bottom: 29%; width: 15px; height: 15px; background: var(--accent-cool); }
+    .hero-stage { position: absolute; inset: 0; transform: rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg)); transform-style: preserve-3d; transition: transform .28s ease-out; }
+    .profile-card { position: absolute; overflow: hidden; border: 2px solid #504B4A; border-radius: 38px; background: var(--wine); box-shadow: 0 24px 58px rgba(55,16,17,.3); }
+    .profile-card img { width: 100%; height: 100%; object-fit: cover; }
+    .profile-main { position: absolute; z-index: 2; top: 20px; right: 42px; width: 322px; padding: 8px; overflow: hidden; border-radius: 43px; transform: rotate(3deg); animation: card-float 6s ease-in-out infinite; }
+    .profile-visual { position: relative; height: 410px; overflow: hidden; border-radius: 32px; background: var(--deep); }
+    .profile-visual > img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+    .profile-back { z-index: 1; top: 100px; right: 279px; width: 226px; padding: 7px; transform: rotate(-11deg); animation: card-float 7s ease-in-out -1.2s infinite; }
+    .profile-back .profile-visual { height: 250px; border-radius: 28px; }
+    .profile-shade { position: absolute; inset: 0; background: linear-gradient(180deg,rgba(13,20,33,.12) 0%,transparent 37%,rgba(23,13,12,.86) 100%); }
+    .profile-meta { position: absolute; right: 19px; bottom: 19px; left: 19px; color: white; }
+    .profile-meta strong { display: block; font-family: var(--display); font-size: 1.52rem; letter-spacing: -.02em; }
+    .profile-meta p { margin: 5px 0 0; color: rgba(255,255,255,.9); font-size: .72rem; font-weight: 570; }
+    .profile-availability { display: inline-flex; align-items: center; gap: 8px; max-width: 100%; margin-top: 10px; padding: 5px 10px; border-radius: 999px; background: rgba(10,20,19,.48); color: #fff; font-size: .68rem; font-weight: 750; line-height: 1.25; }
+    .profile-availability::before { width: 8px; height: 8px; flex: 0 0 8px; border-radius: 50%; background: #63DDA5; content: ""; }
+    .profile-match { position: absolute; z-index: 2; top: 15px; right: 15px; display: inline-flex; align-items: center; gap: 7px; max-width: calc(100% - 30px); padding: 9px 12px; border-radius: 18px; background: rgba(0,0,0,.34); color: white; font-size: .78rem; font-weight: 800; backdrop-filter: blur(9px); }
+    .profile-match svg { width: 16px; height: 16px; flex: 0 0 auto; }
+    .profile-footer { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px 10px 8px; background: var(--wine); }
+    .profile-action-tray { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 10px 12px; border-radius: 25px; background: rgba(229,37,33,.1); }
+    .profile-actions { display: flex; align-items: center; justify-content: center; gap: 12px; }
+    .profile-action { display: grid; width: 56px; height: 56px; place-items: center; border: 0; border-radius: 20px; color: white; font-family: var(--body); font-size: 1.9rem; font-weight: 500; line-height: 1; }
+    .profile-action.pass { background: #403A3B; }
+    .profile-action.superlike { width: 40px; height: 40px; border-radius: 15px; background: #6750A4; font-size: 1.45rem; }
+    .profile-action.like { background: var(--red); font-size: 1.7rem; }
+    .profile-action svg { width: 26px; height: 26px; }
+    .profile-quota { margin: 0; color: #D9C9FF; font-size: .67rem; font-weight: 800; line-height: 1.35; text-align: center; }
+    .profile-back .profile-footer { gap: 5px; padding: 6px 4px 5px; }
+    .profile-back .profile-action-tray { gap: 7px; padding: 6px 8px; border-radius: 18px; }
+    .profile-back .profile-actions { gap: 7px; }
+    .profile-back .profile-action { width: 34px; height: 34px; border-radius: 12px; font-size: 1.2rem; }
+    .profile-back .profile-action.superlike { width: 26px; height: 26px; border-radius: 9px; font-size: .95rem; }
+    .profile-back .profile-action svg { width: 17px; height: 17px; }
+    .profile-back .profile-quota { font-size: .4rem; }
+    .profile-back .profile-meta { right: 12px; bottom: 13px; left: 12px; }
+    .profile-back .profile-meta strong { font-size: 1.12rem; }
+    .profile-back .profile-meta p { font-size: .6rem; }
+    .profile-back .profile-availability { gap: 5px; margin-top: 6px; padding: 4px 7px; font-size: .48rem; }
+    .profile-back .profile-availability::before { width: 6px; height: 6px; flex-basis: 6px; }
+    .profile-back .profile-match { top: 10px; right: 10px; gap: 4px; padding: 6px 8px; border-radius: 13px; font-size: .58rem; }
+    .profile-back .profile-match svg { width: 12px; height: 12px; }
+
+    /* Scrolling interests */
+    .interest-strip { overflow: hidden; padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper); }
+    .interest-inner { display: grid; grid-template-columns: max-content minmax(0,1fr); align-items: center; gap: 28px; }
+    .interest-caption { flex: 0 0 auto; color: var(--muted); font-size: .78rem; font-weight: 720; }
+    .interest-marquee { min-width: 0; overflow: hidden; mask-image: linear-gradient(90deg,transparent 0,#000 3%,#000 97%,transparent 100%); }
+    .interest-track { display: flex; width: max-content; align-items: center; animation: ticker 34s linear infinite; will-change: transform; }
+    .interest-group { display: flex; flex: 0 0 auto; align-items: center; gap: 12px; padding-right: 12px; }
+    .interest-marquee:hover .interest-track,.interest-marquee:focus-within .interest-track { animation-play-state: paused; }
+    .interest-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; background: white; font-size: .79rem; font-weight: 730; white-space: nowrap; }
+    .interest-pill::before { width: 7px; height: 7px; border-radius: 50%; background: var(--red); content: ""; }
+    .interest-pill:nth-child(3n)::before { background: var(--accent-cool); }
+    .interest-pill:nth-child(3n + 1)::before { background: var(--accent-warm); }
+
+    /* Brand statement */
+    .manifesto { position: relative; overflow: hidden; padding: 105px 0 112px; background: var(--charcoal); color: var(--cream-light); }
+    .manifesto::after { position: absolute; top: -95px; right: -35px; width: 320px; height: 320px; border: 1px solid rgba(247,187,189,.24); border-radius: 50%; box-shadow: 0 0 0 26px rgba(247,187,189,.035),0 0 0 55px rgba(247,187,189,.025); content: ""; }
+    .manifesto .container { position: relative; z-index: 1; }
+    .manifesto .eyebrow { color: var(--cream); }
+    .manifesto h2 { max-width: 900px; margin-bottom: 24px; }
+    .manifesto h2 em { color: var(--pink); font-style: normal; }
+    .manifesto p { max-width: 680px; margin-bottom: 0; color: rgba(254,246,231,.78); font-size: 1.04rem; line-height: 1.8; }
+    .manifesto-threads { position: absolute; right: 5%; bottom: -16px; width: 150px; opacity: .84; transform: rotate(-12deg); }
+
+    /* Features */
+    .features { background: var(--paper); }
+    .features-head { display: flex; align-items: end; justify-content: space-between; gap: 48px; margin-bottom: 42px; }
+    .features-head .section-intro { margin-bottom: 0; }
+    .features-head .side-note { max-width: 250px; padding: 18px 20px; border-left: 3px solid var(--pink); color: var(--muted); font-size: .84rem; line-height: 1.6; }
+    .features-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .feature-card { position: relative; display: flex; min-height: 310px; flex-direction: column; padding: 27px 25px 24px; overflow: hidden; border: 1px solid rgba(55,16,17,.1); border-radius: 28px; background: white; transition: transform .25s ease,box-shadow .25s ease,border-color .25s ease; }
+    .feature-card:hover { transform: translateY(-7px); border-color: rgba(229,37,33,.4); box-shadow: 0 18px 38px rgba(55,16,17,.09); }
+    .feature-number { position: absolute; top: 23px; right: 25px; color: rgba(55,16,17,.3); font-family: var(--display); font-size: .8rem; font-weight: 850; }
+    .feature-icon { display: grid; width: 55px; height: 55px; margin-bottom: 34px; place-items: center; border-radius: 18px; background: rgba(247,187,189,.42); color: var(--wine); }
+    .feature-card:nth-child(2) .feature-icon { background: rgba(247,187,189,.28); color: var(--wine); }
+    .feature-card:nth-child(3) .feature-icon { background: rgba(247,187,189,.55); color: var(--wine); }
+    .feature-card:nth-child(4) .feature-icon { background: rgba(247,187,189,.36); color: var(--wine); }
+    .feature-card:nth-child(4) .feature-icon svg { filter: drop-shadow(0 1px 1px rgba(55,16,17,.3)); }
+    .feature-icon svg { width: 26px; height: 26px; }
+    .feature-card p { margin: 0; color: var(--muted); font-size: .86rem; line-height: 1.7; }
+    .feature-arrow { align-self: flex-end; margin-top: auto; padding-top: 24px; color: var(--red); }
+    .feature-arrow svg { width: 20px; height: 20px; }
+
+    /* Three steps and affinity */
+    .how { overflow: hidden; background: var(--cream-light); }
+    .how-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 80px; }
+    .how-copy h2 { max-width: 520px; }
+    .how-copy > p { max-width: 490px; color: var(--muted); font-size: 1rem; line-height: 1.75; }
+    .steps { display: grid; margin-top: 34px; }
+    .step { display: grid; grid-template-columns: 49px 1fr; gap: 17px; padding: 18px 0; border-top: 1px solid rgba(55,16,17,.15); }
+    .step:last-child { border-bottom: 1px solid rgba(55,16,17,.15); }
+    .step-index { display: grid; width: 39px; height: 39px; place-items: center; border: 1px solid rgba(229,37,33,.37); border-radius: 50%; color: var(--wine); font-family: var(--display); font-weight: 850; }
+    .step h3 { margin: 3px 0 6px; font-family: var(--body); font-size: 1rem; letter-spacing: -.01em; }
+    .step p { margin-bottom: 0; color: var(--muted); font-size: .85rem; line-height: 1.65; }
+    .affinity-board { position: relative; min-height: 490px; padding: 34px; border-radius: 36px; background: var(--charcoal); color: white; box-shadow: 0 25px 60px rgba(55,16,17,.2); }
+    .affinity-board::before { position: absolute; top: -20px; right: 15%; width: 76px; height: 76px; border-radius: 50%; background: var(--pink); content: ""; opacity: .92; }
+    .affinity-board::after { position: absolute; right: 22px; bottom: 27px; width: 37px; height: 37px; border: 2px solid var(--red); border-radius: 50%; content: ""; }
+    .board-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .board-top small { color: rgba(255,255,255,.62); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .board-spark { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid rgba(255,255,255,.23); border-radius: 50%; color: var(--cream); }
+    .board-spark svg { width: 18px; height: 18px; }
+    .board-title { margin: 31px 0 8px; font-family: var(--display); font-size: 2.1rem; font-weight: 820; letter-spacing: -.02em; }
+    .board-desc { max-width: 350px; margin-bottom: 26px; color: rgba(255,255,255,.68); font-size: .86rem; line-height: 1.65; }
+    .affinity-person { display: flex; align-items: center; gap: 13px; padding: 12px; border: 1px solid rgba(255,255,255,.14); border-radius: 18px; background: rgba(255,255,255,.06); }
+    .affinity-person img { width: 54px; height: 54px; flex: 0 0 auto; border-radius: 15px; object-fit: cover; }
+    .affinity-person strong { display: block; font-size: .89rem; }
+    .affinity-person span span { display: block; margin-top: 4px; color: rgba(255,255,255,.62); font-size: .73rem; }
+    .affinity-bar-row { display: grid; grid-template-columns: 110px 1fr 32px; align-items: center; gap: 10px; margin-top: 20px; color: rgba(255,255,255,.75); font-size: .75rem; font-weight: 680; }
+    .affinity-track { height: 8px; overflow: hidden; border-radius: 99px; background: rgba(255,255,255,.14); }
+    .affinity-fill { height: 100%; border-radius: inherit; background: var(--cream); transform-origin: left; animation: grow-bar 1.3s cubic-bezier(.2,.75,.2,1) both; }
+    .affinity-bar-row:nth-of-type(5) .affinity-fill { background: var(--red); }
+    .affinity-bar-row:nth-of-type(6) .affinity-fill { background: var(--pink); }
+    .affinity-percent { color: var(--cream); font-size: .7rem; text-align: right; }
+    .board-footnote { margin: 20px 0 0; color: rgba(255,255,255,.48); font-size: .67rem; line-height: 1.5; }
+
+    /* Mystery chat */
+    .mystery { position: relative; isolation: isolate; overflow: hidden; background: var(--wine); color: var(--cream-light); }
+    .mystery::before { position: absolute; z-index: -1; top: -230px; right: -120px; width: 620px; height: 620px; border: 1px solid rgba(247,187,189,.14); border-radius: 50%; content: ""; box-shadow: 0 0 0 35px rgba(247,187,189,.035),0 0 0 72px rgba(247,187,189,.025); }
+    .mystery-grid { display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; gap: 72px; }
+    .mystery-copy .eyebrow { color: var(--pink); }
+    .mystery-copy h2 { max-width: 560px; color: var(--cream-light); }
+    .mystery-copy .lead { margin-bottom: 24px; color: rgba(254,246,231,.78); }
+    .mystery-promises { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .mystery-promises li { display: flex; align-items: flex-start; gap: 11px; color: rgba(254,246,231,.9); font-size: .88rem; line-height: 1.55; }
+    .mystery-promises svg { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 1px; color: var(--pink); }
+    .mystery-note { max-width: 500px; margin: 22px 0 0; color: rgba(254,246,231,.62); font-size: .75rem; line-height: 1.7; }
+    .mystery-demo-wrap { position: relative; width: min(100%,560px); justify-self: end; padding: 25px; }
+    .mystery-orbit { position: absolute; inset: 0; border: 1px dashed rgba(247,187,189,.32); border-radius: 46% 54% 54% 46% / 47% 44% 56% 53%; transform: rotate(-7deg); animation: mystery-orbit 32s linear infinite; }
+    .mystery-orbit::before,.mystery-orbit::after { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: var(--pink); content: ""; }
+    .mystery-orbit::before { top: 8%; left: 18%; }
+    .mystery-orbit::after { right: 5%; bottom: 16%; width: 15px; height: 15px; background: var(--red); box-shadow: 0 0 0 6px rgba(229,37,33,.14); }
+    .mystery-demo { position: relative; z-index: 1; width: min(100%,470px); margin-left: auto; padding: 25px; border: 1px solid rgba(55,16,17,.12); border-radius: 29px; background: var(--cream-light); color: var(--wine); box-shadow: 0 25px 60px rgba(0,0,0,.24); transform: rotate(1deg); animation: mystery-float 6s ease-in-out infinite; }
+    .mystery-demo-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .mystery-demo-label { display: flex; min-width: 0; align-items: center; gap: 10px; }
+    .mystery-live-dot { width: 10px; height: 10px; flex: 0 0 auto; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 5px rgba(229,37,33,.12); animation: mystery-pulse 2s ease-in-out infinite; }
+    .mystery-demo-label strong,.mystery-demo-label small { display: block; }
+    .mystery-demo-label strong { font-size: .9rem; }
+    .mystery-demo-label small { margin-top: 3px; color: var(--muted); font-size: .68rem; }
+    .mystery-lock { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 6px; padding: 8px 10px; border: 1px solid rgba(55,16,17,.11); border-radius: 999px; background: white; color: var(--wine); font-size: .63rem; font-weight: 760; }
+    .mystery-lock svg { width: 14px; height: 14px; color: var(--red); }
+    .mystery-identity { display: flex; align-items: center; gap: 12px; margin: 24px 0 18px; padding: 13px; border: 1px solid rgba(55,16,17,.08); border-radius: 18px; background: rgba(247,187,189,.34); }
+    .mystery-avatar { display: grid; width: 47px; height: 47px; flex: 0 0 auto; place-items: center; border-radius: 15px; background: var(--pink); color: var(--wine); }
+    .mystery-avatar svg { width: 25px; height: 25px; }
+    .mystery-identity-copy strong,.mystery-identity-copy small { display: block; }
+    .mystery-identity-copy strong { font-size: .82rem; }
+    .mystery-identity-copy small { margin-top: 4px; color: var(--muted); font-size: .68rem; }
+    .mystery-identity-mark { display: grid; width: 34px; height: 34px; flex: 0 0 auto; margin-left: auto; place-items: center; border-radius: 50%; background: var(--wine); color: var(--pink); }
+    .mystery-identity-mark svg { width: 16px; height: 16px; }
+    .mystery-chat-log { position: relative; display: grid; gap: 13px; padding-left: 19px; }
+    .mystery-chat-log::before { position: absolute; top: 10px; bottom: 10px; left: 5px; border-left: 1px dashed rgba(229,37,33,.4); content: ""; }
+    .mystery-bubble { position: relative; max-width: 89%; padding: 12px 14px; border-radius: 16px; }
+    .mystery-bubble::before { position: absolute; top: 18px; left: -18px; width: 8px; height: 8px; border: 2px solid var(--cream-light); border-radius: 50%; background: var(--red); content: ""; }
+    .mystery-bubble-question { border-bottom-left-radius: 5px; background: var(--wine); color: var(--cream-light); }
+    .mystery-bubble-answer { justify-self: end; border: 1px solid rgba(55,16,17,.1); border-bottom-right-radius: 5px; background: white; }
+    .mystery-bubble small { display: block; margin-bottom: 5px; color: var(--pink); font-size: .63rem; font-weight: 750; }
+    .mystery-bubble-answer small { color: var(--red-dark); }
+    .mystery-bubble p { margin: 0; font-size: .81rem; line-height: 1.55; }
+    .mystery-demo-footer { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .mystery-demo-footer span { padding: 7px 10px; border-radius: 999px; background: rgba(247,187,189,.34); color: var(--wine); font-size: .64rem; font-weight: 750; }
+    .mystery-caption { position: relative; z-index: 1; margin: 14px 0 0; color: rgba(254,246,231,.6); font-size: .66rem; text-align: center; }
+    .mystery-next { display: grid; grid-template-columns: .92fr 1.55fr auto; align-items: center; gap: 24px; margin-top: 44px; padding: 22px 24px; border: 1px solid rgba(247,187,189,.2); border-radius: 23px; background: rgba(254,246,231,.055); }
+    .mystery-next-intro small { display: block; margin-bottom: 6px; color: var(--pink); font-size: .67rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .mystery-next-intro strong { display: block; font-family: var(--display); font-size: 1.2rem; line-height: 1.2; }
+    .mystery-next-intro p { margin: 7px 0 0; color: rgba(254,246,231,.67); font-size: .73rem; line-height: 1.55; }
+    .mystery-route { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 10px; }
+    .mystery-route-step { display: grid; min-height: 70px; align-content: center; gap: 6px; padding: 10px 12px; border: 1px solid rgba(247,187,189,.18); border-radius: 15px; background: rgba(254,246,231,.06); }
+    .mystery-route-step small { color: var(--pink); font-size: .62rem; font-weight: 800; letter-spacing: .08em; }
+    .mystery-route-step strong { color: var(--cream-light); font-size: .76rem; line-height: 1.3; }
+    .mystery-route-arrow { color: var(--pink); font-size: 1.15rem; }
+    .mystery-next .button { min-height: 46px; padding-inline: 16px; background: var(--pink); color: var(--wine); font-size: .78rem; white-space: nowrap; }
+    .mystery-next .button:hover { background: var(--cream-light); }
+
+    /* Communities */
+    .community { padding-bottom: 110px; background: var(--paper); }
+    .community-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 86px; }
+    .community-copy .lead { margin-bottom: 27px; }
+    .community-list { display: grid; gap: 14px; margin: 25px 0 0; padding: 0; list-style: none; }
+    .community-list li { display: flex; align-items: flex-start; gap: 12px; color: var(--wine); font-size: .9rem; line-height: 1.6; }
+    .check-mark { display: grid; width: 22px; height: 22px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: rgba(247,187,189,.55); color: var(--wine); }
+    .check-mark svg { width: 14px; height: 14px; }
+    .universe-board { position: relative; min-height: 432px; padding: 30px; overflow: hidden; border: 1px solid rgba(55,16,17,.1); border-radius: 34px; background: var(--cream-light); }
+    .universe-board::before { position: absolute; right: -26px; bottom: -24px; width: 105px; height: 105px; border-radius: 50%; background: var(--red); content: ""; opacity: .1; }
+    .universe-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
+    .universe-head small { display: block; margin-bottom: 5px; color: var(--muted); font-size: .68rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .universe-head strong { font-family: var(--display); font-size: 1.48rem; font-weight: 830; letter-spacing: -.02em; }
+    .universe-avatar-stack { display: flex; }
+    .universe-avatar-stack img { width: 37px; height: 37px; border: 3px solid var(--cream-light); border-radius: 50%; object-fit: cover; }
+    .universe-avatar-stack img + img { margin-left: -11px; }
+    .universe-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .universe-tags span { padding: 8px 11px; border: 1px solid rgba(55,16,17,.11); border-radius: 999px; background: rgba(254,246,231,.78); color: var(--wine); font-size: .7rem; font-weight: 750; }
+    .universe-tags span:first-child { border-color: transparent; background: var(--charcoal); color: white; }
+    .post-card { position: relative; z-index: 1; padding: 19px; border: 1px solid rgba(31,29,29,.1); border-radius: 22px; background: white; box-shadow: 0 12px 28px rgba(49,35,30,.08); }
+    .post-author { display: flex; align-items: center; gap: 10px; }
+    .post-author img { width: 37px; height: 37px; border-radius: 50%; object-fit: cover; }
+    .post-author strong { display: block; font-size: .76rem; }
+    .post-author small { display: block; margin-top: 3px; color: var(--muted); font-size: .65rem; }
+    .post-card p { margin: 15px 0 12px; color: var(--wine); font-size: .86rem; line-height: 1.6; }
+    .post-reaction { display: inline-flex; align-items: center; gap: 6px; color: var(--red-dark); font-size: .69rem; font-weight: 760; }
+    .post-reaction svg { width: 15px; height: 15px; }
+    .community-stamp { position: absolute; right: 18px; bottom: 17px; padding: 9px 13px; border-radius: 999px; background: var(--red); color: white; font-size: .68rem; font-weight: 800; transform: rotate(-5deg); }
+
+    /* Profile prompts */
+    .profile-prompts { overflow: hidden; background: linear-gradient(112deg,rgba(247,187,189,.3),var(--paper) 66%); }
+    .profile-prompts-grid { display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; gap: 76px; }
+    .profile-prompts-copy h2 { max-width: 560px; }
+    .profile-prompts-copy .lead { margin-bottom: 25px; }
+    .prompt-benefits { display: grid; gap: 13px; margin: 0; padding: 0; list-style: none; }
+    .prompt-benefits li { display: flex; align-items: flex-start; gap: 12px; color: var(--wine); }
+    .prompt-benefits li > span:first-child { display: grid; width: 30px; height: 30px; flex: 0 0 30px; place-items: center; border-radius: 10px; background: rgba(247,187,189,.48); color: var(--red-dark); font-size: .66rem; font-weight: 850; }
+    .prompt-benefits strong,.prompt-benefits small { display: block; }
+    .prompt-benefits strong { font-size: .79rem; }
+    .prompt-benefits small { margin-top: 3px; color: var(--muted); font-size: .73rem; line-height: 1.5; }
+    .prompt-demo-wrap { position: relative; width: min(100%,540px); justify-self: end; padding: 22px; }
+    .prompt-demo-wrap::before { position: absolute; inset: 0; border: 1px dashed rgba(229,37,33,.32); border-radius: 38% 62% 51% 49% / 53% 43% 57% 47%; content: ""; transform: rotate(-8deg); }
+    .prompt-demo-card { position: relative; z-index: 1; padding: clamp(22px,4vw,32px); border: 1px solid rgba(55,16,17,.1); border-radius: 27px; background: white; box-shadow: 0 22px 55px rgba(55,16,17,.12); transform: rotate(1deg); }
+    .prompt-demo-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .prompt-demo-top > span:first-child { color: var(--muted); font-size: .68rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .prompt-count { padding: 7px 10px; border-radius: 999px; background: rgba(247,187,189,.35); color: var(--wine); font-size: .68rem; font-weight: 800; white-space: nowrap; }
+    .prompt-question { margin: 27px 0 13px; color: var(--wine); font-family: var(--display); font-size: clamp(1.3rem,2.7vw,1.8rem); font-weight: 800; line-height: 1.25; }
+    .prompt-answer { margin: 0; padding: 17px 18px; border-left: 3px solid var(--red); border-radius: 0 15px 15px 0; background: rgba(247,187,189,.22); color: rgba(55,16,17,.83); font-size: .88rem; line-height: 1.7; }
+    .prompt-visibility { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; color: var(--wine); font-size: .73rem; font-weight: 740; }
+    .prompt-check { display: grid; width: 19px; height: 19px; flex: 0 0 19px; place-items: center; border-radius: 6px; background: var(--red); color: white; font-size: .75rem; }
+    .prompt-caption { position: relative; z-index: 1; margin: 14px 0 0; color: var(--muted); font-size: .68rem; text-align: center; }
+
+    /* Trust and closing */
+    .privacy-panel { display: grid; grid-template-columns: 80px 1fr auto; align-items: center; gap: 25px; margin-top: clamp(38px,5vw,64px); padding: 30px 34px; border: 1px solid rgba(55,16,17,.1); border-radius: 28px; background: rgba(254,246,231,.72); }
+    .privacy-icon { display: grid; width: 68px; height: 68px; place-items: center; border-radius: 22px; background: var(--wine); color: var(--pink); }
+    .privacy-icon svg { width: 31px; height: 31px; }
+    .privacy-panel h3 { margin-bottom: 7px; }
+    .privacy-panel p { max-width: 630px; margin-bottom: 0; color: var(--muted); font-size: .84rem; line-height: 1.7; }
+    .privacy-panel .button { flex: 0 0 auto; }
+    .faq { background: var(--wine); color: var(--cream-light); }
+    .faq-grid { display: grid; grid-template-columns: .72fr 1.28fr; align-items: start; gap: 76px; }
+    .faq-intro { position: sticky; top: 110px; }
+    .faq .eyebrow { color: var(--pink); }
+    .faq h2 { color: var(--cream-light); }
+    .faq-intro p { color: rgba(254,246,231,.72); font-size: .94rem; line-height: 1.75; }
+    .faq-contact { display: inline-flex; align-items: center; gap: 7px; margin-top: 8px; color: var(--pink); font-size: .82rem; font-weight: 760; text-underline-offset: 4px; }
+    .faq-list { border-top: 1px solid rgba(247,187,189,.25); }
+    .faq-list details { border-bottom: 1px solid rgba(247,187,189,.25); }
+    .faq-list summary { display: flex; min-height: 69px; align-items: center; justify-content: space-between; gap: 18px; padding: 17px 0; color: var(--cream-light); cursor: pointer; font-family: var(--display); font-size: 1.04rem; font-weight: 760; line-height: 1.35; list-style: none; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { display: grid; width: 29px; height: 29px; flex: 0 0 29px; place-items: center; border: 1px solid rgba(247,187,189,.42); border-radius: 50%; color: var(--pink); content: "+"; font-family: system-ui,sans-serif; font-size: 1.15rem; font-weight: 450; }
+    .faq-list details[open] summary::after { content: "−"; }
+    .faq-list summary:focus-visible { border-radius: 6px; outline: 2px solid var(--pink); outline-offset: 4px; }
+    .faq-answer { max-width: 680px; padding: 0 42px 20px 0; color: rgba(254,246,231,.74); font-size: .83rem; line-height: 1.75; }
+    .faq-animated .faq-answer { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .34s cubic-bezier(.22,.7,.3,1), opacity .24s ease; }
+    .faq-animated .faq-list details[open] .faq-answer { max-height: none; opacity: 1; }
+    .faq-answer p { margin: 0; }
+    .faq-answer a { color: var(--pink); text-underline-offset: 3px; }
+    .final-cta { position: relative; overflow: hidden; padding: 99px 0 104px; background: var(--red); color: white; }
+    .final-cta::before,.final-cta::after { position: absolute; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; content: ""; }
+    .final-cta::before { top: -230px; left: -70px; width: 480px; height: 480px; box-shadow: 0 0 0 26px rgba(255,255,255,.04),0 0 0 54px rgba(255,255,255,.03); }
+    .final-cta::after { right: -100px; bottom: -370px; width: 620px; height: 620px; box-shadow: 0 0 0 36px rgba(255,255,255,.035); }
+    .final-inner { position: relative; z-index: 1; display: flex; align-items: end; justify-content: space-between; gap: 48px; }
+    .final-cta .eyebrow { color: white; }
+    .final-cta h2 { max-width: 730px; margin-bottom: 15px; font-size: clamp(2.8rem,5.3vw,5rem); }
+    .final-cta p { max-width: 590px; margin-bottom: 0; color: rgba(255,255,255,.86); line-height: 1.7; }
+    .final-cta .button { flex: 0 0 auto; background: var(--cream-light); color: var(--charcoal); box-shadow: 0 12px 28px rgba(55,16,17,.22); }
+    .final-cta .button:hover { background: var(--pink); }
+    .site-footer { padding: 26px 0; background: var(--charcoal); color: rgba(254,246,231,.78); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-brand { display: flex; align-items: center; text-decoration: none; }
+    .footer-brand img { width: 118px; height: auto; border-radius: 0; filter: brightness(0) invert(1); }
+    .footer-inner p { margin: 0; font-size: .73rem; }
+    .footer-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; }
+    .footer-nav a { color: rgba(254,246,231,.86); font-size: .75rem; font-weight: 650; text-decoration: none; }
+    .footer-nav a:hover { color: var(--cream); text-decoration: underline; text-underline-offset: 4px; }
+    .back-top { display: inline-flex; align-items: center; gap: 7px; color: var(--cream); font-size: .75rem; font-weight: 720; text-decoration: none; }
+    .back-top svg { width: 15px; height: 15px; }
+
+    /* Animation and responsive layouts */
+    @keyframes card-float { 0%,100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+    @keyframes note-float { 0%,100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+    @keyframes mystery-float { 0%,100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+    @keyframes mystery-orbit { to { rotate: 353deg; } }
+    @keyframes mystery-pulse { 50% { box-shadow: 0 0 0 8px rgba(229,37,33,.04); } }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes grow-bar { from { scale: 0 1; } to { scale: 1 1; } }
+    .js .reveal { opacity: 0; translate: 0 24px; transition: opacity .65s ease,translate .65s cubic-bezier(.2,.7,.2,1); }
+    .js .reveal.is-visible { opacity: 1; translate: 0 0; }
+    .js .reveal[data-delay="1"] { transition-delay: .09s; }
+    .js .reveal[data-delay="2"] { transition-delay: .18s; }
+    .js .reveal[data-delay="3"] { transition-delay: .27s; }
+    @media (max-width: 1050px) {
+      :root { --width: 920px; }
+      .hero-grid { grid-template-columns: 1fr .9fr; gap: 12px; }
+      .hero-art { transform: scale(.9); transform-origin: center right; }
+      .profile-main { right: 28px; }
+      .profile-back { right: 180px; }
+      .features-grid { grid-template-columns: repeat(2,1fr); }
+      .feature-card { min-height: 270px; }
+      .how-grid,.community-grid,.mystery-grid { gap: 48px; }
+      .profile-prompts-grid { gap: 45px; }
+      .faq-grid { gap: 45px; }
+      .mystery-next { grid-template-columns: 1fr 1.3fr; }
+      .mystery-next .button { grid-column: 1 / -1; justify-self: start; }
+      .privacy-panel { grid-template-columns: 68px 1fr; }
+      .privacy-panel .button { grid-column: 2; justify-self: start; }
+    }
+    @media (max-width: 900px) {
+      .hero-grid { min-height: unset; grid-template-columns: 1fr; gap: 0; }
+      .hero-copy { max-width: 720px; padding: 20px 0 8px; }
+      .hero-art { width: min(100%,540px); justify-self: center; transform: scale(.9); transform-origin: center top; margin-bottom: -25px; }
+      .profile-back { right: 279px; }
+    }
+    @media (min-width: 761px) and (max-width: 1100px) {
+      .menu-toggle { display: grid; }
+      .site-nav { position: fixed; inset: 82px 0 auto; display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 12px 36px 22px; border-bottom: 1px solid var(--line); background: var(--paper); box-shadow: 0 18px 25px rgba(55,16,17,.08); visibility: hidden; opacity: 0; pointer-events: none; transform: translateY(-10px); transition: opacity .22s ease,transform .26s cubic-bezier(.22,.7,.3,1),visibility 0s linear .26s; }
+      .site-nav.open { visibility: visible; opacity: 1; pointer-events: auto; transform: translateY(0); transition-delay: 0s; }
+      .site-nav a { margin-left: 0; padding: 15px 5px; border-bottom: 1px solid rgba(55,16,17,.08); }
+      .site-nav .nav-cta { margin-top: 13px; padding: 14px 18px; border: 0; text-align: center; }
+    }
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 75px; }
+      .container { width: calc(100% - 36px); max-width: 560px; }
+      .section { padding: 82px 0; }
+      .header-inner { min-height: 72px; }
+      .brand img { width: 118px; }
+      .menu-toggle { display: grid; }
+      .site-nav { position: fixed; inset: 72px 0 auto; display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 12px 22px 22px; border-bottom: 1px solid var(--line); background: var(--paper); box-shadow: 0 18px 25px rgba(55,16,17,.08); visibility: hidden; opacity: 0; pointer-events: none; transform: translateY(-10px); transition: opacity .22s ease,transform .26s cubic-bezier(.22,.7,.3,1),visibility 0s linear .26s; }
+      .site-nav.open { visibility: visible; opacity: 1; pointer-events: auto; transform: translateY(0); transition-delay: 0s; }
+      .site-nav a { margin-left: 0; padding: 15px 5px; border-bottom: 1px solid rgba(55,16,17,.08); }
+      .site-nav .nav-cta { margin-top: 13px; padding: 14px 18px; border: 0; text-align: center; }
+      .hero { padding: 44px 0 63px; }
+      .hero-grid { min-height: unset; grid-template-columns: 1fr; gap: 5px; }
+      .hero-copy { padding: 10px 0 0; }
+      h1 { font-size: clamp(3.15rem,13.3vw,5.3rem); }
+      .hero-art { width: min(100%,500px); min-height: 540px; justify-self: center; transform: scale(.88); transform-origin: center top; margin-bottom: -35px; }
+      .profile-main { top: 28px; right: clamp(15px,8vw,42px); width: min(318px,calc(100vw - 54px)); }
+      .profile-visual { height: 400px; }
+      .profile-back { top: 76px; right: auto; left: max(3px,5vw); width: 197px; height: auto; }
+      .interest-inner { grid-template-columns: 1fr; gap: 13px; }
+      .interest-track { animation-duration: 27s; }
+      .manifesto { padding: 80px 0 90px; }
+      .manifesto-threads { right: -4px; bottom: -18px; width: 104px; }
+      .features-head { display: block; }
+      .features-head .side-note { max-width: 420px; margin: 25px 0 0 2px; }
+      .features-grid { gap: 12px; }
+      .feature-card { min-height: 295px; padding: 21px 19px 20px; border-radius: 23px; }
+      .feature-icon { width: 49px; height: 49px; margin-bottom: 27px; border-radius: 15px; }
+      .feature-card h3 { font-size: 1.23rem; }
+      .feature-card p { font-size: .82rem; }
+      .how-grid,.community-grid,.mystery-grid { grid-template-columns: 1fr; gap: 44px; }
+      .profile-prompts-grid,.faq-grid { grid-template-columns: 1fr; gap: 34px; }
+      .prompt-demo-wrap { justify-self: center; }
+      .faq-intro { position: static; }
+      .mystery-demo-wrap { width: min(100%,560px); justify-self: center; }
+      .mystery-next { grid-template-columns: 1fr; gap: 18px; margin-top: 35px; }
+      .mystery-next .button { grid-column: auto; }
+      .affinity-board { min-height: 470px; padding: 27px; border-radius: 29px; }
+      .board-footnote { margin-top: 18px; }
+      .community-grid { gap: 39px; }
+      .universe-board { min-height: 420px; padding: 23px; border-radius: 29px; }
+      .privacy-panel { grid-template-columns: 55px 1fr; gap: 16px; padding: 23px; border-radius: 24px; }
+      .privacy-icon { width: 54px; height: 54px; border-radius: 17px; }
+      .privacy-icon svg { width: 26px; height: 26px; }
+      .privacy-panel h3 { font-size: 1.25rem; }
+      .privacy-panel p { font-size: .79rem; }
+      .privacy-panel .button { grid-column: 1 / -1; }
+      .final-cta { padding: 78px 0 82px; }
+      .final-inner { align-items: flex-start; flex-direction: column; gap: 27px; }
+      .footer-inner { flex-wrap: wrap; }
+    }
+    @media (max-width: 430px) {
+      .container { width: calc(100% - 30px); max-width: 560px; }
+      .adult-note { font-size: .73rem; }
+      .hero-art { width: 100%; min-height: 550px; margin-left: 0; transform: scale(.85); }
+      .profile-main { right: clamp(12px,8vw,34px); width: min(318px,calc(100vw - 54px)); }
+      .profile-visual { height: 380px; }
+      .profile-back { left: 0; }
+      .features-grid { grid-template-columns: 1fr; }
+      .feature-card { min-height: 248px; }
+      .feature-icon { margin-bottom: 23px; }
+      .affinity-board { min-height: 445px; padding: 22px; }
+      .board-title { font-size: 1.8rem; }
+      .affinity-bar-row { grid-template-columns: 96px 1fr 28px; gap: 7px; font-size: .7rem; }
+      .mystery-demo-top { align-items: flex-start; flex-wrap: wrap; }
+      .mystery-demo-wrap { padding: 15px; }
+      .mystery-demo { padding: 18px; border-radius: 23px; }
+      .mystery-lock { gap: 4px; padding: 7px 8px; font-size: .58rem; }
+      .mystery-identity { gap: 9px; padding: 11px; }
+      .mystery-route { grid-template-columns: 1fr; gap: 7px; }
+      .mystery-route-arrow { justify-self: center; transform: rotate(90deg); }
+      .mystery-route-step { min-height: 58px; }
+      .universe-board { padding: 19px; }
+      .universe-head strong { font-size: 1.27rem; }
+      .universe-avatar-stack img { width: 32px; height: 32px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .interest-track { animation: none !important; transform: none !important; }
+      .js .reveal { opacity: 1; translate: none; transform: none; }
+    }
+    @media (min-width: 761px) and (max-width: 1100px), (max-width: 760px) {
+      .site-nav a { opacity: 0; transform: translateY(-6px); transition: color .2s ease,opacity .2s ease,transform .24s ease; }
+      .site-nav.open a { opacity: 1; transform: translateY(0); }
+      .site-nav.open a:nth-child(1) { transition-delay: .03s; }
+      .site-nav.open a:nth-child(2) { transition-delay: .06s; }
+      .site-nav.open a:nth-child(3) { transition-delay: .09s; }
+      .site-nav.open a:nth-child(4) { transition-delay: .12s; }
+      .site-nav.open a:nth-child(5) { transition-delay: .15s; }
+      .site-nav.open a:nth-child(6) { transition-delay: .18s; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Akaito, volver al inicio"><img src="images/akaito-wordmark.svg" alt=""></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path class="menu-line menu-line-top" d="M3 7h18"/><path class="menu-line menu-line-middle" d="M3 12h18"/><path class="menu-line menu-line-bottom" d="M3 17h18"/><path class="menu-close" d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+        <a href="#funciones">Qué puedes hacer</a><a href="#como-funciona">Cómo funciona</a><a href="#chat-misterioso">Chat misterioso</a><a href="#comunidades">Comunidades</a><a href="#faq">Preguntas frecuentes</a>
+        <a class="nav-cta" href="#empieza">Conoce Akaito <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Tu punto de encuentro friki</span>
+          <h1><span>Tu fandom</span> puede ser el <em>comienzo</em> de algo.</h1>
+          <p class="lead">Conoce personas que comparten tu pasión por el anime, el manga y los videojuegos. Para encontrar amistad, citas, compañero de juego o tu próxima comunidad.</p>
+          <div class="store-links" aria-label="Disponibilidad en tiendas">
+            <button class="store-button" type="button" data-store-link="app-store" disabled aria-label="App Store, disponible próximamente">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.47-2.09-.49-3.24 0-1.43.62-2.19.44-3.05-.35-4.86-5.01-4.14-12.64 1.4-12.92 1.34.07 2.28.73 3.08.79 1.19-.24 2.33-.92 3.6-.83 1.52.12 2.66.72 3.42 1.8-3.14 1.87-2.4 5.98.51 7.13-.58 1.53-1.32 3.05-2.64 4.04ZM12.03 7.25c-.15-2.28 1.7-4.17 3.85-4.35.3 2.64-2.4 4.62-3.85 4.35Z"/></svg>
+              <span class="store-button-copy"><small>Disponible próximamente</small><strong>App Store</strong></span>
+            </button>
+            <button class="store-button" type="button" data-store-link="google-play" disabled aria-label="Google Play, disponible próximamente">
+              <svg viewBox="0 0 40 40" aria-hidden="true">
+                <path fill="#EA4335" d="M19.7 19.2 4.3 35.3c.5 1.7 2.1 3 4 3 .8 0 1.5-.2 2.1-.6l17.4-9.9-8.1-8.6Z"/>
+                <path fill="#FBBC04" d="m35.3 16.4-7.5-4.3-8.4 7.4 8.5 8.3 7.5-4.2c1.3-.7 2.2-2.1 2.2-3.6-.1-1.5-1-2.9-2.3-3.6Z"/>
+                <path fill="#4285F4" d="M4.3 4.7c-.1.3-.1.7-.1 1.1v28.5c0 .4 0 .7.1 1.1l16-15.7-16-15Z"/>
+                <path fill="#34A853" d="m19.8 20 8-7.9L10.5 2.3c-.6-.4-1.4-.6-2.2-.6-1.9 0-3.6 1.3-4 3L19.8 20Z"/>
+              </svg>
+              <span class="store-button-copy"><small>Disponible próximamente</small><strong>Google Play</strong></span>
+            </button>
+          </div>
+          <p class="adult-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>Un espacio para personas adultas con mil universos favoritos.</p>
+        </div>
+        <div class="hero-art reveal" data-delay="1" role="img" aria-label="Tarjeta de perfil de ejemplo de Akaito">
+          <div class="art-orbit" aria-hidden="true"></div>
+          <div class="hero-stage">
+            <div class="profile-card profile-back" aria-hidden="true">
+              <div class="profile-visual">
+                <img src="images/space-explorer-vega.webp" alt="">
+                <div class="profile-shade"></div>
+                <span class="profile-match"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.1 6.1L20 10l-5.9 2.1L12 18l-2.1-5.9L4 10l5.9-1.9L12 2Zm7 13 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z"/></svg>3 en común</span>
+                <div class="profile-meta"><strong>Vega, 27</strong><p>Exploradora de mundos</p><span class="profile-availability">Disponible para jugar</span></div>
+              </div>
+              <div class="profile-footer">
+                <div class="profile-action-tray"><div class="profile-actions">
+                  <span class="profile-action pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></span>
+                  <span class="profile-action superlike"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6 6.6.9-4.8 4.6 1.1 6.5L12 17l-5.8 3.1 1.1-6.5-4.8-4.7 6.6-.9L12 2Z"/></svg></span>
+                  <span class="profile-action like"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-8.2-5.1-9.8-10C.8 6.7 3.2 3.5 6.8 3.5c2.2 0 4 1.2 5.2 3 1.2-1.8 3-3 5.2-3 3.6 0 6 3.2 4.6 7.5C20.2 15.9 12 21 12 21Z"/></svg></span>
+                </div></div>
+                <p class="profile-quota">3 de 3 Superlikes disponibles esta semana.</p>
+              </div>
+            </div>
+            <div class="profile-card profile-main" aria-hidden="true">
+              <div class="profile-visual">
+                <img src="images/music-anime-akane.webp" alt="">
+                <div class="profile-shade"></div>
+                <span class="profile-match"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.1 6.1L20 10l-5.9 2.1L12 18l-2.1-5.9L4 10l5.9-1.9L12 2Zm7 13 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z"/></svg>92% de afinidad por gustos</span>
+                <div class="profile-meta"><strong>Akane, 25</strong><p>Ilustradora</p><span class="profile-availability">Disponible este fin de semana</span></div>
+              </div>
+              <div class="profile-footer">
+                <div class="profile-action-tray"><div class="profile-actions">
+                  <span class="profile-action pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></span>
+                  <span class="profile-action superlike"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6 6.6.9-4.8 4.6 1.1 6.5L12 17l-5.8 3.1 1.1-6.5-4.8-4.7 6.6-.9L12 2Z"/></svg></span>
+                  <span class="profile-action like"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-8.2-5.1-9.8-10C.8 6.7 3.2 3.5 6.8 3.5c2.2 0 4 1.2 5.2 3 1.2-1.8 3-3 5.2-3 3.6 0 6 3.2 4.6 7.5C20.2 15.9 12 21 12 21Z"/></svg></span>
+                </div></div>
+                <p class="profile-quota">3 de 3 Superlikes disponibles esta semana.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#manifesto"><span class="scroll-cue-icon" aria-hidden="true"></span><span>Desliza para descubrir</span></a>
+    </section>
+
+    <div class="interest-strip" role="region" aria-label="Aficiones que puedes compartir en Akaito">
+      <div class="container interest-inner"><span class="interest-caption">Hay un universo para cada quien:</span>
+        <span class="sr-only">Anime, manga, videojuegos, rol, cosplay, cultura pop, co-op y tus propios favoritos.</span>
+        <div class="interest-marquee" aria-hidden="true">
+          <div class="interest-track" aria-hidden="true">
+            <div class="interest-group">
+              <span class="interest-pill">Anime</span><span class="interest-pill">Manga</span><span class="interest-pill">Videojuegos</span><span class="interest-pill">Rol</span><span class="interest-pill">Cosplay</span><span class="interest-pill">Cultura pop</span><span class="interest-pill">Co-op</span><span class="interest-pill">Y tus propios favoritos</span>
+            </div>
+            <div class="interest-group" aria-hidden="true">
+              <span class="interest-pill">Anime</span><span class="interest-pill">Manga</span><span class="interest-pill">Videojuegos</span><span class="interest-pill">Rol</span><span class="interest-pill">Cosplay</span><span class="interest-pill">Cultura pop</span><span class="interest-pill">Co-op</span><span class="interest-pill">Y tus propios favoritos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="manifesto" id="manifesto">
+      <div class="container reveal">
+        <span class="eyebrow">Que tus gustos te presenten</span>
+        <h2>Por fin, una conversación que empieza por <em>“¿cuál es tu anime favorito?”</em></h2>
+        <p>En Akaito, lo que te apasiona no queda escondido en tu perfil: es una forma natural de conocer a alguien, compartir referencias y encontrar más gente para disfrutarlo.</p>
+        <img class="manifesto-threads" src="images/infinity-thread.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="section features" id="funciones">
+      <div class="container">
+        <div class="features-head reveal">
+          <div class="section-intro"><span class="eyebrow">Un perfil, muchos caminos</span><h2>Conecta a tu manera.</h2><p>Akaito reúne herramientas para pasar de “también te gusta” a una conversación, una amistad o un plan compartido.</p></div>
+          <p class="side-note">Elige qué buscas: citas, amistad, jugar en equipo o sumarte a planes y comunidades.</p>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card reveal">
+            <span class="feature-number">01</span><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 20v-1.2a6.2 6.2 0 0 1 12.4 0V20M17 5.2a3.4 3.4 0 0 1 0 6.4m1.6 3.1a5.2 5.2 0 0 1 2.6 4.5V20"/></svg></span>
+            <h3>Encuentra a tu party</h3><p>Descubre perfiles de personas adultas según sus aficiones e intenciones. Filtra por tu anime o videojuego favorito y encuentra a quienes comparten tus referencias.</p><span class="feature-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7-7"/></svg></span>
+          </article>
+          <article class="feature-card reveal" data-delay="1">
+            <span class="feature-number">02</span><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-8.5-4.6-8.5-11a4.7 4.7 0 0 1 8.5-2.7A4.7 4.7 0 0 1 20.5 10c0 6.4-8.5 11-8.5 11Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3>Descubre vuestra afinidad</h3><p>Los cuestionarios resumen cómo coincidís en videojuegos, anime y manga, planes y estilo de conexión.</p><span class="feature-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </article>
+          <article class="feature-card reveal" data-delay="2">
+            <span class="feature-number">03</span><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v3m10-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13H4V6a1 1 0 0 1 1-1Z"/><path d="m9 15 2 2 4-4"/></svg></span>
+            <h3>Convierte el match en plan</h3><p>Propón algo desde el chat o crea y encuentra partidas, planes de anime y actividades de rol y mesa.</p><span class="feature-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </article>
+          <article class="feature-card reveal" data-delay="3">
+            <span class="feature-number">04</span><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z"/><path d="M4 6v14.5A2.5 2.5 0 0 1 6.5 18H20M8 7h8m-8 4h8"/></svg></span>
+            <h3>Encuentra tu comunidad</h3><p>Explora universos y fandoms, únete a los que te interesan y conversa en su tablón con otras personas aficionadas.</p><span class="feature-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section how" id="como-funciona">
+      <div class="container how-grid">
+        <div class="how-copy reveal">
+          <span class="eyebrow">Fácil de empezar</span><h2>Lo que os gusta en común es solo el primer capítulo.</h2><p>Conoce gente a tu ritmo: desde elegir qué buscas hasta decidir si queréis hablar, jugar o quedar.</p>
+          <div class="steps">
+            <div class="step"><span class="step-index">1</span><div><h3>Cuenta qué te mueve</h3><p>Elige tus fandoms favoritos y si buscas citas, amistad, compañía para jugar o planes y comunidad.</p></div></div>
+            <div class="step"><span class="step-index">2</span><div><h3>Encuentra puntos en común</h3><p>Explora perfiles y compara afinidades en videojuegos, anime y manga, planes y estilo de conexión.</p></div></div>
+            <div class="step"><span class="step-index">3</span><div><h3>Empieza a tu manera</h3><p>Con un match, usa las sugerencias del chat para romper el hielo y proponed un plan. También puedes iniciar una conversación misteriosa.</p></div></div>
+          </div>
+        </div>
+        <div class="affinity-board reveal" data-delay="1" aria-label="Ejemplo ilustrativo de comparación de afinidades">
+          <div class="board-top"><small>Una forma de conectar</small><span class="board-spark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 1.6 7.2L21 12l-7.4 2.8L12 22l-1.6-7.2L3 12l7.4-2.8L12 2Z"/></svg></span></div>
+          <h3 class="board-title">¿Qué tenéis en común?</h3><p class="board-desc">El test compara respuestas en cuatro áreas: videojuegos, anime y manga, planes y estilo de conexión.</p>
+          <div class="affinity-person"><img src="images/noir-manga-detective-iori.webp" alt=""><span><strong>Perfil de ejemplo</strong><span>Anime · manga · videojuegos</span></span></div>
+          <div class="affinity-bar-row"><span>Anime y manga</span><div class="affinity-track"><div class="affinity-fill" style="width:84%"></div></div><span class="affinity-percent">···</span></div>
+          <div class="affinity-bar-row"><span>Videojuegos</span><div class="affinity-track"><div class="affinity-fill" style="width:65%"></div></div><span class="affinity-percent">···</span></div>
+          <div class="affinity-bar-row"><span>Planes</span><div class="affinity-track"><div class="affinity-fill" style="width:74%"></div></div><span class="affinity-percent">···</span></div>
+          <div class="affinity-bar-row"><span>Estilo de conexión</span><div class="affinity-track"><div class="affinity-fill" style="width:80%"></div></div><span class="affinity-percent">···</span></div>
+          <p class="board-footnote">Composición ilustrativa; no representa resultados reales ni porcentajes de la app.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mystery" id="chat-misterioso" aria-labelledby="mystery-title">
+      <div class="container">
+        <div class="mystery-grid">
+          <div class="mystery-copy reveal">
+            <span class="eyebrow">Otra forma de romper el hielo</span>
+            <h2 id="mystery-title">Una pregunta. Un chat. Un poco de misterio.</h2>
+            <p class="lead">Empieza una conversación sin revelar vuestra identidad. Una pregunta sobre anime o videojuegos puede ser el primer hilo de algo nuevo.</p>
+            <ul class="mystery-promises">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>La conversación se abre cuando llega la primera respuesta.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Las identidades permanecen ocultas durante el chat misterioso.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Si hacéis match antes de que termine, la conversación continúa en Chats.</span></li>
+            </ul>
+            <p class="mystery-note">Es un chat temporal: dura 6 horas, o 12 si cualquiera de las dos personas tiene Akaito Premium.</p>
+          </div>
+
+          <div class="mystery-demo-wrap reveal" data-delay="1" role="img" aria-label="Ejemplo ilustrativo de conversación misteriosa en Akaito">
+            <div class="mystery-orbit" aria-hidden="true"></div>
+            <div class="mystery-demo">
+              <div class="mystery-demo-top">
+                <div class="mystery-demo-label"><span class="mystery-live-dot" aria-hidden="true"></span><span><strong>Chat misterioso</strong><small>Ejemplo ilustrativo</small></span></div>
+                <span class="mystery-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Identidad oculta</span>
+              </div>
+              <div class="mystery-identity">
+                <span class="mystery-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg></span>
+                <span class="mystery-identity-copy"><strong>Alguien del fandom</strong><small>Aún no conocéis vuestros perfiles</small></span>
+                <span class="mystery-identity-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 14.5 9.5 21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></svg></span>
+              </div>
+              <div class="mystery-chat-log">
+                <div class="mystery-bubble mystery-bubble-question"><small>Tu pregunta</small><p>¿Qué juego o anime siempre te alegra el día?</p></div>
+                <div class="mystery-bubble mystery-bubble-answer"><small>Respuesta de ejemplo</small><p>Una aventura con una buena historia y música que se te queda dentro.</p></div>
+              </div>
+              <div class="mystery-demo-footer"><span>Una conversación temporal</span><span>6 h · 12 h con Premium</span></div>
+            </div>
+            <p class="mystery-caption">La respuesta y el diálogo son ficticios; solo ilustran la función.</p>
+          </div>
+        </div>
+
+        <div class="mystery-next reveal">
+          <div class="mystery-next-intro"><small>Un camino posible</small><strong>De coincidir a compartir algo.</strong><p>Desde el chat con match podéis proponer una partida o una quedada; en las comunidades hay planes de anime, videojuegos y rol y mesa.</p></div>
+          <div class="mystery-route" aria-label="Ejemplo de recorrido: fandom compartido, conversación y plan">
+            <span class="mystery-route-step"><small>01 · COINCIDIR</small><strong>Un fandom en común</strong></span><span class="mystery-route-arrow" aria-hidden="true">→</span>
+            <span class="mystery-route-step"><small>02 · CONVERSAR</small><strong>Un chat a vuestro ritmo</strong></span><span class="mystery-route-arrow" aria-hidden="true">→</span>
+            <span class="mystery-route-step"><small>03 · COMPARTIR</small><strong>Una partida o un plan</strong></span>
+          </div>
+          <a class="button" href="#comunidades">Explora comunidades y planes <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section community" id="comunidades">
+      <div class="container community-grid">
+        <div class="community-copy reveal">
+          <span class="eyebrow">Más gente, más referencias</span><h2>Un fandom también puede ser tu punto de encuentro.</h2>
+          <p class="lead">Explora comunidades temáticas, únete a tus universos favoritos y comparte conversación en su tablón. Y cuando surja un plan, puedes organizarlo desde Akaito.</p>
+          <ul class="community-list">
+            <li><span class="check-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span><span>Busca universos y fandoms por interés.</span></li>
+            <li><span class="check-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span><span>Participa en el tablón de las comunidades a las que te unes.</span></li>
+            <li><span class="check-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span><span>Propón planes y actividades para compartir tus aficiones.</span></li>
+          </ul>
+        </div>
+        <div class="universe-board reveal" data-delay="1" aria-label="Vista de ejemplo de una comunidad temática">
+          <div class="universe-head"><span><small>Explorar comunidades</small><strong>Universos y fandoms</strong></span><span class="universe-avatar-stack" aria-hidden="true"><img src="images/akari.webp" alt=""><img src="images/kaede.webp" alt=""><img src="images/haru.webp" alt=""></span></div>
+          <div class="universe-tags"><span>Anime</span><span>Manga</span><span>Videojuegos</span><span>Cultura pop</span></div>
+          <article class="post-card">
+            <div class="post-author"><img src="images/fantasy-botanist-otoha.webp" alt=""><span><strong>Una afición compartida</strong><small>Ejemplo ilustrativo · en una comunidad</small></span></div>
+            <p>¿Qué manga te enganchó desde la primera página? Busco recomendaciones para mi próxima lectura.</p>
+            <span class="post-reaction"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.7c0 5.1-8.8 10.3-8.8 10.3S3.2 13.8 3.2 8.7A4.7 4.7 0 0 1 12 6a4.7 4.7 0 0 1 8.8 2.7Z"/></svg>Una conversación por empezar</span>
+          </article>
+          <span class="community-stamp">Tu gente, tu universo</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section profile-prompts" id="preguntas-perfil" aria-labelledby="profile-prompts-title">
+      <div class="container">
+        <div class="profile-prompts-grid">
+          <div class="profile-prompts-copy reveal">
+            <span class="eyebrow">Tu historia también cuenta</span>
+            <h2 id="profile-prompts-title">Hay mucho más que poner en común.</h2>
+            <p class="lead">Responde hasta tres preguntas de perfil para compartir algo más personal que tus aficiones. Tú eliges cuáles responder y qué respuestas mostrar durante el descubrimiento.</p>
+            <ul class="prompt-benefits">
+              <li><span aria-hidden="true">01</span><span><strong>Hasta tres preguntas</strong><small>Elige las que mejor hablan de ti.</small></span></li>
+              <li><span aria-hidden="true">02</span><span><strong>Responde a tu manera</strong><small>Una respuesta puede ser el inicio de una buena charla.</small></span></li>
+              <li><span aria-hidden="true">03</span><span><strong>Tú decides qué compartir</strong><small>Activa o desactiva cada respuesta para el descubrimiento.</small></span></li>
+            </ul>
+          </div>
+          <div class="prompt-demo-wrap reveal" data-delay="1" aria-label="Ejemplo ilustrativo de una pregunta de perfil en Akaito">
+            <article class="prompt-demo-card">
+              <div class="prompt-demo-top"><span>Pregunta de perfil</span><span class="prompt-count">1 de 3</span></div>
+              <p class="prompt-question">¿Qué juego o anime siempre te alegra el día?</p>
+              <p class="prompt-answer">Volver a Kiki: entregas a domicilio y después una partida tranquila a Stardew Valley. Es mi combinación infalible.</p>
+              <div class="prompt-visibility"><span class="prompt-check" aria-hidden="true">✓</span><span>Mostrar esta respuesta en descubrimiento</span></div>
+            </article>
+            <p class="prompt-caption">Ejemplo ficticio. Cada persona decide qué respuestas compartir.</p>
+          </div>
+        </div>
+        <div class="privacy-panel reveal" role="group" aria-labelledby="privacy-title">
+          <span class="privacy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="M12 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm-3 5a3 3 0 0 1 6 0"/></svg></span>
+          <span><h3 id="privacy-title">Tú decides qué compartir.</h3><p>Akaito es para personas adultas. Puedes elegir qué detalles mostrar en tu perfil; tu correo, tus redes sociales y tu ubicación exacta no aparecen en él. La cercanía es opcional y también puedes bloquear o reportar perfiles desde la app.</p></span>
+          <a class="button button-dark" href="#empieza">Así se vive Akaito <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div class="faq-intro reveal">
+          <span class="eyebrow">Respuestas claras</span>
+          <h2 id="faq-title">Preguntas frecuentes</h2>
+          <p>Una pequeña guía para descubrir cómo será Akaito y qué puedes hacer en la app.</p>
+          <a class="faq-contact" href="mailto:helpmejeluchu@gmail.com">¿Tienes otra duda? Escríbenos <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="faq-list reveal" data-delay="1">
+          <details>
+            <summary>¿Akaito es solo para encontrar pareja?</summary>
+            <div class="faq-answer"><p>No. Akaito está pensado para conocer gente con intereses afines: puedes buscar amistad, citas, compañeros para jugar o comunidades con las que compartir tus aficiones.</p></div>
+          </details>
+          <details>
+            <summary>¿Cómo encuentro a gente de mi fandom?</summary>
+            <div class="faq-answer"><p>En descubrimiento podrás filtrar por anime y videojuegos favoritos y encontrar afinidades en común. También podrás explorar comunidades de tus universos favoritos y participar en sus conversaciones y planes.</p></div>
+          </details>
+          <details>
+            <summary>¿Qué son las preguntas de perfil?</summary>
+            <div class="faq-answer"><p>Puedes responder hasta tres preguntas para que otras personas conozcan mejor tu forma de ser. Tú eliges qué respuestas mostrar durante el descubrimiento. <a href="#preguntas-perfil">Ver un ejemplo de perfil</a>.</p></div>
+          </details>
+          <details>
+            <summary>¿Cómo funciona el chat misterioso?</summary>
+            <div class="faq-answer"><p>Es una conversación que empieza sin mostrar las identidades. Cuando ambas personas responden y se produce un match, la conversación puede continuar en Chats.</p></div>
+          </details>
+          <details>
+            <summary>¿Tengo que compartir mi ubicación?</summary>
+            <div class="faq-answer"><p>No. La función de cercanía es opcional y tu ubicación exacta no aparece en el perfil. También puedes decidir qué otros detalles personales compartir.</p></div>
+          </details>
+          <details>
+            <summary>¿Quién puede usar Akaito?</summary>
+            <div class="faq-answer"><p>Akaito está dirigido exclusivamente a personas mayores de 18 años.</p></div>
+          </details>
+          <details>
+            <summary>¿Cómo puedo denunciar un perfil o contenido?</summary>
+            <div class="faq-answer"><p>La app ofrece accesos para denunciar desde perfiles, chats, planes y publicaciones de comunidades. El equipo de desarrollo y moderación revisa los avisos; el plazo estimado es de uno a cinco días, según el volumen recibido.</p></div>
+          </details>
+          <details>
+            <summary>¿Puedo eliminar mi cuenta y mis datos?</summary>
+            <div class="faq-answer"><p>Sí. Puedes solicitar la eliminación desde la app o seguir los pasos de la <a href="account-deletion.html">página de eliminación de cuenta</a>, donde encontrarás los detalles del proceso.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="empieza">
+      <div class="container final-inner reveal">
+        <div><span class="eyebrow">Tu próximo capítulo</span><h2>Comparte el fandom. Encuentra a tu gente.</h2><p>Akaito llegará próximamente a App Store y Google Play. Mientras tanto, puedes seguir las novedades del proyecto en el Telegram de Jeluchu Apps.</p></div>
+        <a class="button" href="https://t.me/JeluchuApps" target="_blank" rel="noopener noreferrer">Novedades en Telegram <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="#inicio"><img src="images/akaito-wordmark.svg" alt="Akaito"></a>
+      <p>Una aventura compartida empieza por algo en común.</p>
+      <nav class="footer-nav" aria-label="Información legal">
+        <a href="privacy-policy.html">Privacidad</a>
+        <a href="child-safety.html">Seguridad infantil</a>
+        <a href="account-deletion.html">Eliminar cuenta</a>
+        <a href="terms.html">Condiciones</a>
+      </nav>
+      <a class="back-top" href="#inicio">Volver arriba <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7"/></svg></a>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const menuButton = document.querySelector(".menu-toggle");
+      const navigation = document.querySelector("#site-nav");
+      const mediaMatches = query => typeof window.matchMedia === "function" && window.matchMedia(query).matches;
+      const reducedMotion = mediaMatches("(prefers-reduced-motion: reduce)");
+      root.classList.add("js");
+      if (menuButton && navigation) {
+        menuButton.addEventListener("click", () => {
+          const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", String(!isOpen));
+          menuButton.setAttribute("aria-label", isOpen ? "Abrir menú" : "Cerrar menú");
+          navigation.classList.toggle("open", !isOpen);
+          document.body.classList.toggle("menu-open", !isOpen);
+        });
+        navigation.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+          menuButton.setAttribute("aria-expanded", "false");
+          menuButton.setAttribute("aria-label", "Abrir menú");
+          navigation.classList.remove("open");
+          document.body.classList.remove("menu-open");
+        }));
+      }
+      const revealItems = document.querySelectorAll(".reveal");
+      if (reducedMotion || !("IntersectionObserver" in window)) {
+        revealItems.forEach(item => item.classList.add("is-visible"));
+      } else {
+        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
+        }), { threshold: .14 });
+        revealItems.forEach(item => observer.observe(item));
+      }
+      const faqItems = document.querySelectorAll(".faq-list details");
+      if (!reducedMotion && "open" in document.createElement("details") && faqItems.length) {
+        root.classList.add("faq-animated");
+        faqItems.forEach(details => {
+          const summary = details.querySelector("summary");
+          const answer = details.querySelector(".faq-answer");
+          if (!summary || !answer) return;
+          let closing = false;
+          let finishHandler = null;
+          let fallbackTimer = 0;
+          const clearPending = () => {
+            if (finishHandler) answer.removeEventListener("transitionend", finishHandler);
+            if (fallbackTimer) window.clearTimeout(fallbackTimer);
+            finishHandler = null;
+            fallbackTimer = 0;
+          };
+          summary.addEventListener("click", event => {
+            event.preventDefault();
+            const opening = !details.open || closing;
+            const currentHeight = answer.getBoundingClientRect().height;
+            const currentOpacity = window.getComputedStyle(answer).opacity;
+            clearPending();
+            if (opening) {
+              details.open = true;
+              closing = false;
+            } else {
+              closing = true;
+            }
+            answer.style.maxHeight = `${currentHeight}px`;
+            answer.style.opacity = currentOpacity;
+            void answer.offsetHeight;
+            finishHandler = transitionEvent => {
+              if (transitionEvent.target !== answer || transitionEvent.propertyName !== "max-height") return;
+              clearPending();
+              if (!opening && closing) {
+                details.open = false;
+                closing = false;
+              }
+              answer.style.removeProperty("max-height");
+              answer.style.removeProperty("opacity");
+            };
+            answer.addEventListener("transitionend", finishHandler);
+            fallbackTimer = window.setTimeout(() => finishHandler({ target: answer, propertyName: "max-height" }), 500);
+            answer.style.maxHeight = opening ? `${answer.scrollHeight}px` : "0px";
+            answer.style.opacity = opening ? "1" : "0";
+          });
+        });
+      }
+      const hero = document.querySelector(".hero-art");
+      const stage = document.querySelector(".hero-stage");
+      if (hero && stage && !reducedMotion && mediaMatches("(pointer: fine)")) {
+        hero.addEventListener("pointermove", event => {
+          const bounds = hero.getBoundingClientRect();
+          const x = (event.clientX - bounds.left) / bounds.width - .5;
+          const y = (event.clientY - bounds.top) / bounds.height - .5;
+          stage.style.setProperty("--tilt-x", (x * 3) + "deg");
+          stage.style.setProperty("--tilt-y", (y * -3) + "deg");
+        });
+        hero.addEventListener("pointerleave", () => {
+          stage.style.setProperty("--tilt-x", "0deg");
+          stage.style.setProperty("--tilt-y", "0deg");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

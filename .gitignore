@@ -1,0 +1,19 @@
+# Local OS/editor files
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+Desktop.ini
+
+# Temporary editor files
+*.swp
+*.swo
+*~
+*.tmp
+
+# Web dependencies and generated output
+/node_modules/
+/dist/
+/coverage/

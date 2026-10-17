@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FEF6E7">
+  <meta name="description" content="Abre Akaito o conoce cuándo estará disponible para iOS y Android.">
+  <link rel="canonical" href="https://akaito.jeluchu.com/app/">
+  <link rel="icon" href="../images/favicon.png" type="image/png" sizes="512x512">
+  <title>Abre Akaito</title>
+  <style>
+    @font-face {
+      font-family: Gogia;
+      src: url("../branding/fonts/Gogia.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+    :root {
+      color-scheme: light;
+      --red: #E52521;
+      --wine: #371011;
+      --pink: #F7BBBD;
+      --cream: #FEF6E7;
+      font-family: Gogia, system-ui, sans-serif;
+      color: var(--wine);
+      background: var(--cream);
+    }
+    * { box-sizing: border-box; }
+    body {
+      display: grid;
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      padding: 28px;
+      place-items: center;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(247,187,189,.62), transparent 28rem),
+        radial-gradient(circle at 95% 90%, rgba(229,37,33,.10), transparent 25rem),
+        var(--cream);
+    }
+    main {
+      width: 100%;
+      max-width: 620px;
+      padding: 28px;
+      padding: clamp(28px, 7vw, 58px);
+      border: 1px solid rgba(55,16,17,.12);
+      border-radius: 32px;
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 26px 80px rgba(55,16,17,.10);
+      text-align: center;
+    }
+    .brand { width: 48%; max-width: 180px; height: auto; margin: 0 auto 36px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--red);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 5px rgba(229,37,33,.12);
+      content: "";
+    }
+    h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(2.7rem, 10vw, 4.7rem);
+      letter-spacing: -.035em;
+      line-height: .98;
+    }
+    p {
+      max-width: 440px;
+      margin: 0 auto;
+      color: rgba(55,16,17,.72);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 19px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--wine);
+      color: var(--cream);
+      font-size: .9rem;
+      font-weight: 760;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--red); }
+    .button.secondary { border-color: rgba(55,16,17,.2); background: transparent; color: var(--wine); }
+    .button.secondary:hover { background: rgba(247,187,189,.3); }
+    .note { margin-top: 25px; font-size: .8rem; }
+    .note a { color: var(--wine); text-underline-offset: 3px; }
+    @media (max-width: 480px) {
+      body { padding: 16px; }
+      main { border-radius: 26px; }
+      .actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <a href="../" aria-label="Akaito, volver al inicio"><img class="brand" src="../images/akaito-wordmark.svg" alt="Akaito"></a>
+    <span class="eyebrow">Tu próximo capítulo</span>
+    <h1>Akaito está preparando su aventura.</h1>
+    <p>Esta dirección está preparada para abrir Akaito cuando la app esté instalada y el enlace verificado en tu dispositivo. El lanzamiento en App Store y Google Play llegará próximamente.</p>
+    <div class="actions">
+      <a class="button" href="akaito://app">Abrir Akaito <span aria-hidden="true">↗</span></a>
+      <a class="button" href="../">Descubrir Akaito <span aria-hidden="true">↗</span></a>
+      <a class="button secondary" href="https://t.me/JeluchuApps" target="_blank" rel="noopener noreferrer">Seguir las novedades</a>
+    </div>
+    <p class="note">Si la app todavía no está instalada, puedes <a href="https://akaito.jeluchu.com/">descubrir Akaito en la web</a>.</p>
+  </main>
+</body>
+</html>

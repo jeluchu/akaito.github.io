@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title description">
+  <title id="title">Lazo infinito</title>
+  <desc id="description">Un hilo forma dos lazos enlazados, símbolo de un vínculo que perdura.</desc>
+  <path d="M512 512C422 350 304 284 228 364c-81 86-27 230 72 230 94 0 143-53 212-82 69-29 118-82 212-82 99 0 153 144 72 230-76 80-194 14-284-148Z" fill="none" stroke="#BF455F" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
