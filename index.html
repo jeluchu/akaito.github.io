@@ -114,6 +114,8 @@
     .adult-note svg { width: 17px; height: 17px; color: var(--red); }
     .store-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
     .store-button { display: inline-flex; flex: 1 1 160px; min-width: 0; min-height: 68px; align-items: center; justify-content: flex-start; gap: 11px; padding: 10px 14px; border: 1px solid rgba(247,187,189,.45); border-radius: 16px; background: var(--wine); color: var(--cream-light); text-align: left; }
+    a.store-button { text-decoration: none; transition: transform .2s ease, border-color .2s ease; }
+    a.store-button:hover { transform: translateY(-2px); border-color: var(--red); }
     .store-button:disabled { cursor: default; opacity: 1; }
     .store-button svg { width: 25px; height: 25px; flex: 0 0 auto; }
     .store-button-copy small { display: block; margin-bottom: 3px; color: rgba(254,246,231,.76); font-size: .59rem; line-height: 1.2; }
@@ -377,11 +379,14 @@
     .final-cta::before { top: -230px; left: -70px; width: 480px; height: 480px; box-shadow: 0 0 0 26px rgba(255,255,255,.04),0 0 0 54px rgba(255,255,255,.03); }
     .final-cta::after { right: -100px; bottom: -370px; width: 620px; height: 620px; box-shadow: 0 0 0 36px rgba(255,255,255,.035); }
     .final-inner { position: relative; z-index: 1; display: flex; align-items: end; justify-content: space-between; gap: 48px; }
+    .final-actions { display: flex; flex: 0 0 auto; flex-wrap: wrap; gap: 12px; }
     .final-cta .eyebrow { color: white; }
     .final-cta h2 { max-width: 730px; margin-bottom: 15px; font-size: clamp(2.8rem,5.3vw,5rem); }
     .final-cta p { max-width: 590px; margin-bottom: 0; color: rgba(255,255,255,.86); line-height: 1.7; }
     .final-cta .button { flex: 0 0 auto; background: var(--cream-light); color: var(--charcoal); box-shadow: 0 12px 28px rgba(55,16,17,.22); }
     .final-cta .button:hover { background: var(--pink); }
+    .final-cta .button-secondary { border-color: rgba(255,255,255,.6); background: transparent; color: white; box-shadow: none; }
+    .final-cta .button-secondary:hover { background: rgba(255,255,255,.12); }
     .site-footer { padding: 26px 0; background: var(--charcoal); color: rgba(254,246,231,.78); }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
     .footer-brand { display: flex; align-items: center; text-decoration: none; }
@@ -484,6 +489,7 @@
       .privacy-panel .button { grid-column: 1 / -1; }
       .final-cta { padding: 78px 0 82px; }
       .final-inner { align-items: flex-start; flex-direction: column; gap: 27px; }
+      .final-actions { width: 100%; }
       .footer-inner { flex-wrap: wrap; }
     }
     @media (max-width: 430px) {
@@ -556,15 +562,15 @@
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.47-2.09-.49-3.24 0-1.43.62-2.19.44-3.05-.35-4.86-5.01-4.14-12.64 1.4-12.92 1.34.07 2.28.73 3.08.79 1.19-.24 2.33-.92 3.6-.83 1.52.12 2.66.72 3.42 1.8-3.14 1.87-2.4 5.98.51 7.13-.58 1.53-1.32 3.05-2.64 4.04ZM12.03 7.25c-.15-2.28 1.7-4.17 3.85-4.35.3 2.64-2.4 4.62-3.85 4.35Z"/></svg>
               <span class="store-button-copy"><small>Disponible próximamente</small><strong>App Store</strong></span>
             </button>
-            <button class="store-button" type="button" data-store-link="google-play" disabled aria-label="Google Play, disponible próximamente">
+            <a class="store-button" href="https://play.google.com/store/apps/details?id=com.jeluchu.akaito" target="_blank" rel="noopener noreferrer" aria-label="Descargar Akaito en Google Play">
               <svg viewBox="0 0 40 40" aria-hidden="true">
                 <path fill="#EA4335" d="M19.7 19.2 4.3 35.3c.5 1.7 2.1 3 4 3 .8 0 1.5-.2 2.1-.6l17.4-9.9-8.1-8.6Z"/>
                 <path fill="#FBBC04" d="m35.3 16.4-7.5-4.3-8.4 7.4 8.5 8.3 7.5-4.2c1.3-.7 2.2-2.1 2.2-3.6-.1-1.5-1-2.9-2.3-3.6Z"/>
                 <path fill="#4285F4" d="M4.3 4.7c-.1.3-.1.7-.1 1.1v28.5c0 .4 0 .7.1 1.1l16-15.7-16-15Z"/>
                 <path fill="#34A853" d="m19.8 20 8-7.9L10.5 2.3c-.6-.4-1.4-.6-2.2-.6-1.9 0-3.6 1.3-4 3L19.8 20Z"/>
               </svg>
-              <span class="store-button-copy"><small>Disponible próximamente</small><strong>Google Play</strong></span>
-            </button>
+              <span class="store-button-copy"><small>Disponible ahora</small><strong>Google Play</strong></span>
+            </a>
           </div>
           <p class="adult-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>Un espacio para personas adultas con mil universos favoritos.</p>
         </div>
@@ -835,8 +841,11 @@
 
     <section class="final-cta" id="empieza">
       <div class="container final-inner reveal">
-        <div><span class="eyebrow">Tu próximo capítulo</span><h2>Comparte el fandom. Encuentra a tu gente.</h2><p>Akaito llegará próximamente a App Store y Google Play. Mientras tanto, puedes seguir las novedades del proyecto en el Telegram de Jeluchu Apps.</p></div>
-        <a class="button" href="https://t.me/JeluchuApps" target="_blank" rel="noopener noreferrer">Novedades en Telegram <span aria-hidden="true">↗</span></a>
+        <div><span class="eyebrow">Tu próximo capítulo</span><h2>Comparte el fandom. Encuentra a tu gente.</h2><p>Akaito ya está disponible en Google Play y llegará próximamente a App Store. Descárgala y sigue las novedades del proyecto en el Telegram de Jeluchu Apps.</p></div>
+        <div class="final-actions">
+          <a class="button" href="https://play.google.com/store/apps/details?id=com.jeluchu.akaito" target="_blank" rel="noopener noreferrer">Descargar en Google Play <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://t.me/JeluchuApps" target="_blank" rel="noopener noreferrer">Novedades en Telegram <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </section>
   </main>
