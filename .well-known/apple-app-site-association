@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["978Z8XT84A.com.jeluchu.akaito"],
+        "components": [
+          { "/": "/app/" },
+          { "/": "/app/*" },
+          { "/": "/sala/", "?": { "id": "?*" } }
+        ]
+      }
+    ]
+  }
+}

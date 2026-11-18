@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jeluchu.akaito",
+      "sha256_cert_fingerprints": [
+        "AA:18:7A:9C:2E:DF:31:D8:52:59:C8:B3:AC:7B:C5:94:EC:2B:5E:36:09:4F:77:FB:5F:8C:D0:CF:9B:5F:A6:59"
+      ]
+    }
+  }
+]
