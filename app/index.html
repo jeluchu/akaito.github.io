@@ -126,14 +126,24 @@
     <a href="../" aria-label="Akaito, volver al inicio"><img class="brand" src="../images/akaito-wordmark.svg" alt="Akaito"></a>
     <span class="eyebrow">Tu próximo capítulo</span>
     <h1>Akaito ya está en Google Play.</h1>
-    <p>Esta dirección está preparada para abrir Akaito cuando la app esté instalada y el enlace compatible con tu dispositivo funcione. Si aún no la tienes, descárgala en Google Play. La versión para App Store llegará próximamente.</p>
+    <p>Esta dirección está preparada para abrir Akaito cuando la app esté instalada y el enlace compatible con tu dispositivo funcione. Si aún no la tienes, descárgala en Google Play. En iPhone puedes probarla ya en la beta abierta de TestFlight.</p>
     <div class="actions">
       <a class="button" href="akaito://app">Abrir Akaito <span aria-hidden="true">↗</span></a>
       <a class="button" href="https://play.google.com/store/apps/details?id=com.jeluchu.akaito" target="_blank" rel="noopener noreferrer">Descargar en Google Play <span aria-hidden="true">↗</span></a>
+      <a class="button" href="https://testflight.apple.com/join/CW9J9VCF" target="_blank" rel="noopener noreferrer">Probar en TestFlight (iPhone) <span aria-hidden="true">↗</span></a>
       <a class="button" href="../">Descubrir Akaito <span aria-hidden="true">↗</span></a>
       <a class="button secondary" href="https://t.me/JeluchuApps" target="_blank" rel="noopener noreferrer">Seguir las novedades</a>
     </div>
     <p class="note">Si la app todavía no está instalada, puedes <a href="https://akaito.jeluchu.com/">descubrir Akaito en la web</a>.</p>
   </main>
+  <script>
+    // If this page loads, the app did not take the link (it is not installed, or the link was typed in
+    // the browser), so send the device to the store that matches it. Desktop stays on this page.
+    // When the iOS app reaches the App Store, replace the TestFlight link below with its App Store URL.
+    var ua = navigator.userAgent;
+    var iosTarget = "https://testflight.apple.com/join/CW9J9VCF";
+    if (/Android/.test(ua)) location.replace("https://play.google.com/store/apps/details?id=com.jeluchu.akaito");
+    else if (/iPhone|iPad|iPod/.test(ua)) location.replace(iosTarget);
+  </script>
 </body>
 </html>

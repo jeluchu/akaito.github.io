@@ -42,15 +42,15 @@
   </main>
   <script>
     // Only the room id travels in the link; the page never shows or stores personal data.
-    // When the iOS app is published, paste its App Store link here and the button turns on by itself.
-    var APP_STORE_URL = "";
+    // When the iOS app is published, paste its App Store link here (now the public TestFlight beta link) and restore the label "Descargar en App Store".
+    var APP_STORE_URL = "https://testflight.apple.com/join/CW9J9VCF";
     var appStore = document.getElementById("app-store");
     if (APP_STORE_URL) {
       appStore.href = APP_STORE_URL;
       appStore.rel = "noopener noreferrer";
       appStore.removeAttribute("aria-disabled");
       appStore.querySelector("small").remove();
-      appStore.textContent = "Descargar en App Store";
+      appStore.textContent = "Probar en TestFlight";
     }
     // Put the store that matches the device first.
     var isIos = /iPhone|iPad|iPod/.test(navigator.userAgent);
