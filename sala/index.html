@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6BABD">
+  <meta name="robots" content="noindex">
+  <title>Te han invitado a una sala · Akaito</title>
+  <link rel="icon" href="../images/favicon.png" type="image/png" sizes="512x512">
+  <style>
+    :root { color-scheme: light; --wine: #371011; --pink: #F6BABD; --red: #CB4C46; --blush: #FDEDED; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px;
+      background: var(--pink); color: var(--wine);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main {
+      width: 100%; max-width: 420px; padding: 32px 24px; border-radius: 28px; text-align: center;
+      background: var(--wine); color: var(--blush);
+    }
+    h1 { margin: 0 0 8px; font-size: 1.6rem; }
+    p { margin: 0 0 24px; line-height: 1.5; opacity: .9; }
+    .button {
+      display: block; margin: 12px 0 0; padding: 14px 20px; border-radius: 999px; font-weight: 700;
+      text-decoration: none; background: var(--pink); color: var(--wine);
+    }
+    .button.secondary { background: transparent; color: var(--blush); border: 2px solid var(--blush); }
+    .button[aria-disabled="true"] { opacity: .6; cursor: default; pointer-events: none; }
+    .button small { display: block; font-size: .75rem; font-weight: 400; opacity: .85; }
+    small { display: block; margin-top: 20px; opacity: .7; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Te han invitado a una sala</h1>
+    <p>Abre Akaito para ver la sala y unirte a la partida.</p>
+    <a id="open" class="button" href="akaito://sala">Abrir en Akaito</a>
+    <a id="app-store" class="button secondary" aria-disabled="true">App Store<small>Disponible próximamente</small></a>
+    <a id="play-store" class="button secondary" href="https://play.google.com/store/apps/details?id=com.jeluchu.akaito" rel="noopener noreferrer">Descargar en Google Play</a>
+    <small>Akaito es solo para personas adultas.</small>
+  </main>
+  <script>
+    // Only the room id travels in the link; the page never shows or stores personal data.
+    // When the iOS app is published, paste its App Store link here and the button turns on by itself.
+    var APP_STORE_URL = "";
+    var appStore = document.getElementById("app-store");
+    if (APP_STORE_URL) {
+      appStore.href = APP_STORE_URL;
+      appStore.rel = "noopener noreferrer";
+      appStore.removeAttribute("aria-disabled");
+      appStore.querySelector("small").remove();
+      appStore.textContent = "Descargar en App Store";
+    }
+    // Put the store that matches the device first.
+    var isIos = /iPhone|iPad|iPod/.test(navigator.userAgent);
+    if (isIos) appStore.parentNode.insertBefore(appStore, document.getElementById("play-store"));
+    else appStore.parentNode.insertBefore(document.getElementById("play-store"), appStore);
+    var id = new URLSearchParams(location.search).get("id") || "";
+    var valid = /^[0-9a-fA-F-]{36}$/.test(id);
+    document.getElementById("open").href = valid ? "akaito://sala?id=" + encodeURIComponent(id) : "akaito://app";
+  </script>
+</body>
+</html>
